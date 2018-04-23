@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>INFO 257 Final Project: SymTrackDB</title>
+		<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Patients</h1>
+					<table class="table">
+						<tr>
+							<th>Patient ID</th>
+							<th>Name</th>
+							<th>Date of Birth</th>
+							<th>Street Address</th>
+							<th>City</th>
+							<th>State</th>
+							<th>Country</th>
+							<th>Telephone</th>
+						</tr>
+						{% for ui_row in data %}
+						<tr>
+							<td>{{ ui_row.patient_id }}</td>
+							<td>{{ ui_row.name }}</td>
+							<td>{{ ui_row.date_of_birth }}</td>
+							<td>{{ ui_row.street_address }}</td>
+							<td>{{ ui_row.city }}</td>
+							<td>{{ ui_row.state }}</td>
+							<td>{{ ui_row.country }}</td>
+							<td>{{ ui_row.telephone }}</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
