@@ -1,0 +1,72 @@
+question,symp_id,symptom
+Anxiety_panic_attacks_severity,72,Anxiety or panic attack
+Breathlessness_severity,43,Shortness of breath
+Chest_wall_pain_or_ribs_sore_severity,44,Chest pain
+Confusion_difficulty_thinking_severity,28,"Confusion, difficulty thinking"
+Constipation_severity,1,Constipation
+Degree_of_disability_severity,100,Other
+Dental_pain_severity,55,Dental pain
+Diarrhea_severity,2,Diarrhea
+Difficulty_with_concentration_reading_problem_absorbing_new_information_severity,30,Difficulty concentrating
+Disorientation_getting_lost_going_to_wrong_places_severity,33,Disorientation
+Ear_pain_severity,56,Ear pain
+Erectile_dysfunction_severity,52,Sexual dysfunction or loss of libido
+Exaggerated_symptoms_or_worse_hangover_from_alcohol_severity,57,Exaggerated alcohol hangover
+Excessive_night_time_sleep_severity,58,Excessive sleep at night
+Facial_paralysis_severity,19,Facial paralysis
+Fatigue_severity,8,Fatigue
+Fevers_severity,9,Fever
+Forgetfulness_poor_short_term_memory_poor_attention_severity,31,Forgetfulness
+Head_congestion_severity,59,Head congestion
+Headache_severity,25,Headache
+Hearing_buzzing_ringing_decreased_hearing_severity,17,Buzzing/ringing ears
+Heart_block_severity,100,Other
+Heart_murmur_or_valve_prolapse_severity,100,Other
+Heart_palpitations_or_skips_severity,27,Heart palpitations
+Heartburn_stomach_pain_severity,6,Abdominal pain
+Increased_motion_sickness_vertigo_spinning_severity,10,"Motion sickness, vertigo"
+Insomnia_severity,15,Insomnia
+Irritable_bladder_or_bladder_dysfunction_severity,3,Irritable bladder
+Joint_pain_ankles_wrists_severity,34,Joint pain
+Joint_pain_fingers_toes_severity,34,Joint pain
+Joint_pain_hips_shoulders_severity,34,Joint pain
+Joint_pain_knees_elbows_severity,34,Joint pain
+Joint_pain_severity,34,Joint pain
+Joint_swelling_ankles_wrists_severity,35,Joint stiffness or swelling
+Joint_swelling_fingers_toes_severity,35,Joint stiffness or swelling
+Joint_swelling_hips_shoulders_severity,35,Joint stiffness or swelling
+Joint_swelling_knees_elbows_severity,35,Joint stiffness or swelling
+Joint_swelling_severity,35,Joint stiffness or swelling
+Light_sensitivity_severity,21,Light sensitivity
+Lightheadedness_severity,26,Dizziness
+Loss_of_libido_severity,52,Sexual dysfunction or loss of libido
+Low_abdominal_pain_cramps_severity,6,Abdominal pain
+Mood_swings_irritability_depression_severity,32,"Mood swings, irritability"
+Muscle_pain_or_cramps_severity,38,Muscle cramps
+Napping_during_the_day_severity,60,Daytime sleepiness
+Neck_creaks_and_cracks_severity,24,Neck cracks
+Night_sweats_severity,12,Sweats
+Obvious_muscle_weakness_severity,61,Muscle weakness
+Off_balance_severity,11,Poor balance
+Pain_in_genital_area_severity,53,Testicular pain
+Persistent_swollen_glands_severity,13,Swollen glands
+Psychosis_severity,62,Psychosis
+Queasy_stomach_or_nausea_severity,5,Nausea/Vomiting
+Seizures_severity,63,Seizures
+Sore_soles_severity,65,Sore sole
+Sore_throat_severity,20,Sore throat
+Sound_sensitivity_severity,66,Sound sensitivity
+Speech_errors_severity,67,Speech errors
+Stiffness_of_the_joints_or_back_severity,23,Stiff neck
+Symptom_flares_every_4_weeks_severity,68,Symptom flareups every 4 weeks
+Tingling_numbness_burning_or_stabbing_sensations_shooting_pains_skin_hypersensitivity_severity,47,Numbness or tingling
+Tremor_severity,14,Tremors
+Twitching_of_the_face_or_other_severity,22,Twitching facial muscles
+Unexplained_back_pain_severity,69,Back pain
+Unexplained_hair_loss_severity,70,Hair loss
+Unexplained_menstrual_irregularity_severity,51,Menstrual irregularity
+Unexplained_milk_production_breast_pain_severity,41,Breast milk production (unexplained)
+Unexplained_weight_gain_severity,16,Weight increase
+Unexplained_weight_loss_severity,64,Weight loss
+Vision_double_blurry_floaters_severity,18,Double/blurry vision
+Word_search_name_block_severity,71,Word search name block
