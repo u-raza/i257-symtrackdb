@@ -7,15 +7,21 @@ from flask import session, escape, flash
 import os
 # interaction with database
 import models
+# forms and validation
+from forms import PatientForm
+
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    # create tables in database
+# form validation
+app.config.update(dict(
+    SECRET_KEY="powerful secretkey",
+    WTF_CSRF_SECRET_KEY="a csrf secret key"
+))
 
-    # create patient table
-    models.create_patient_table()
+@app.route('/')
+@app.route('/index')
+def index():
     return render_template('index.html')
 
 @app.route('/contact-us')
@@ -38,7 +44,7 @@ def patient():
         data_row["state"] = db_row[5]
         data_row["country"] = db_row[6]
         data_row["telephone"] = db_row[7]
-    data.append(data_row)
+        data.append(data_row)
     return render_template("patient.html", data=data)
 
 
@@ -78,6 +84,30 @@ def view_table_patient():
     data.append(data_row)
     return render_template("patient.html", data=data)
 
+
+#### app routes for dummy data
+# add patient and other data
+@app.route('/setup', methods=['GET', 'POST'])
+def setup():
+    pform = PatientForm()
+    #return redirect('/login')
+    error = None
+    if pform.validate_on_submit():
+
+        #user input
+        name = pform.name.data
+        dob = pform.dob.data
+        street = pform.street_address.data
+        city = pform.city.data
+        state = pform.state.data
+        country = pform.country.data
+        telephone = pform.telephone.data
+
+        patient = models.add_patient(name, dob, street, city, state, country, telephone)
+
+        error = 'A patient with that patient id already exists'
+        return redirect('/patient')
+    return render_template('setup.html', error = error, form = pform)
 
 if __name__ == "__main__":
     app.run()
