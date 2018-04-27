@@ -64,7 +64,6 @@ def dated_url_for(endpoint, **values):
     return url_for(endpoint, **values)
 ##### end browser cache fix
 
-
 @app.route('/patient', methods=['GET'])
 def view_table_patient():
     conn = sqlite3.connect('i257symtrack.db')
@@ -109,5 +108,33 @@ def setup():
         return redirect('/patient')
     return render_template('setup.html', error = error, form = pform)
 
+@app.route('/fill_symptoms', methods=['GET', 'POST'])
+def fill_symptoms():
+    # sym_id = 3
+    # name = 'testing'
+    # models.add_symptom(sym_id, name, 'blah', False, False, True, False)
+        
+    with open('data/symptoms_dummydata_only.csv') as fin:
+        lines = fin.readlines()
+        for line in lines:
+            lst = line.split(',')
+            if len(lst) == 2:
+                sym_id, name = lst
+            else:
+                sym_id, name, _ = lst
+            #print(line)
+            # Add symptom, giving it a severity
+            try:
+                models.add_symptom(sym_id, name, name, False, False, True, False)
+            except:
+                print(sym_id, name)
+
+    return render_template('index.html')
+
 if __name__ == "__main__":
     app.run()
+
+
+
+
+

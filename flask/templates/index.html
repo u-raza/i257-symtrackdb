@@ -1,18 +1,96 @@
 
 {% extends "base.html" %}
 {% block content %}
-<!-- Login page -->
-<body id="welcome">
+<!-- Title page -->
     <div class="container white-text">
     <div class="row">
       <div class="col s12 m12 l12 ">
 
-        <div class='center-align'> <h1>A Database for Keeping Track of Symptoms</h1> </div>
+        <div class='center-align'> <h3>A Database for Keeping Track of Symptoms</h3> </div>
         <h4></h4>
 
             </div>
-        </div>
-  <br>
+    </div>
   
-</body>
+  <br>
+  </div>
+
+<div class='section black'>
+
+	<div class='row'></div>
+
+</div>
+ 
+<!--Symptoms-->
+<div id="symptoms" class="section white scroll-adjust">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                <h2 class="center header"> Symptoms </h2>
+            </div>
+
+            <div class="col s12 m4 l4">
+            	<div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">flash_on</i>
+                    <a href="{{url_for('fill_symptoms')}}" method="post"> <h5>Fill In Data</h5></a>
+                    <p class="light center">We use dummy data extrapolated from domain experts.</p>
+            	</div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">format_quote</i>
+                    <h5>Average Symptom Severity</h5>
+                    <p class="light center">We calculate average symptom severity across various time periods</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">cloud</i>
+                    <h5 class="promo-caption">Cloud Computing</h5>
+                    <p class="light center">Housed in the Cloud</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='section black'>
+
+
+</div>
+
+<!-- Medications -->
+<div id="medications" class="section white scroll-adjust">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                <h2 class="center header"> Medications </h2>
+            </div>
+
+            <div class="col s12 m4 l4">
+            	<div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">flash_on</i>
+                    <h5>Fill In Data</h5>
+                    <p class="light center">We use dummy data extrapolated from domain experts</p>
+            	</div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">format_quote</i>
+                    <h5>Patients and Medications</h5>
+                    <p class="light center">Here we show the medications used by each patient</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="large blue-text text-lighten-2 material-icons">cloud</i>
+                    <h5 class="promo-caption">Cloud Computing</h5>
+                    <p class="light center">Housed in the Cloud</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<div class='section white'></div>
 {% endblock %}

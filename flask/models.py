@@ -26,10 +26,25 @@ def add_patient(name, date_of_birth, street_address, city, state, country, telep
         cur = conn.cursor()
         cur.execute('PRAGMA foreign_keys = ON')
 
-        sql_command = \
+        sql_stmt = \
             "INSERT INTO patient (name, date_of_birth, street_address, city, state, country, telephone) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
-        cur.execute(sql_command, (name, date_of_birth, street_address, city, state, country, telephone))
+        cur.execute(sql_stmt, (name, date_of_birth, street_address, city, state, country, telephone))
         #trip_id = cur.lastrowid
         conn.commit()
         print('done')
+
+def add_symptom(sym_id, name, description, has_duration, has_bodypart, has_severity, has_character):
+	    with sql.connect("i257symtrack.db") as conn:
+	        conn.row_factory = sql.Row
+	        cur = conn.cursor()
+	        cur.execute('PRAGMA foreign_keys = ON')
+
+	        sql_stmt = \
+	            "INSERT INTO symptom (symptom_id, name, description, has_duration, has_bodypart, has_severity, has_character) VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+	        cur.execute(sql_stmt, (sym_id, name, description, has_duration, has_bodypart, has_severity, has_character))
+	        #trip_id = cur.lastrowid
+	        #conn.commit()
+
+	        
