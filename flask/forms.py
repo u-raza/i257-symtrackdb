@@ -8,6 +8,7 @@ from wtforms import validators
 class PatientForm(Form):
     name = StringField('name', [validators.required()])
     dob = StringField('dob', [validators.required()])
+    street_address = StringField('street_address', [validators.required()])
     city = StringField('city', [validators.required()])
     state = StringField('state', [validators.required()])
     country = StringField('country', [validators.required()])

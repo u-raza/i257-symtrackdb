@@ -19,17 +19,17 @@ def create_patient_table():
 	# tables are already created via createdb.sql
 	pass
 
-# Add Trial
-def add_patient(name, date_of_birth, city, state, country, telephone):
+# Add Patient
+def add_patient(name, date_of_birth, street_address, city, state, country, telephone):
     with sql.connect("i257symtrack.db") as conn:
         conn.row_factory = sql.Row
         cur = conn.cursor()
         cur.execute('PRAGMA foreign_keys = ON')
 
         sql_command = \
-            "INSERT INTO patient (name, date_of_birth, city, state, country, telephone) VALUES (?, ?, ?, ?, ?, ?)"
+            "INSERT INTO patient (name, date_of_birth, street_address, city, state, country, telephone) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
-        cur.execute(sql_command, (name, date_of_birth, city, state, country, telephone))
+        cur.execute(sql_command, (name, date_of_birth, street_address, city, state, country, telephone))
         #trip_id = cur.lastrowid
         conn.commit()
         print('done')

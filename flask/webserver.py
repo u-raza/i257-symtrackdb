@@ -44,7 +44,7 @@ def patient():
         data_row["state"] = db_row[5]
         data_row["country"] = db_row[6]
         data_row["telephone"] = db_row[7]
-    data.append(data_row)
+        data.append(data_row)
     return render_template("patient.html", data=data)
 
 
@@ -97,15 +97,16 @@ def setup():
         #user input
         name = pform.name.data
         dob = pform.dob.data
+        street = pform.street_address.data
         city = pform.city.data
         state = pform.state.data
         country = pform.country.data
         telephone = pform.telephone.data
 
-        patient = models.add_patient(name, dob, city, state, country, telephone)
+        patient = models.add_patient(name, dob, street, city, state, country, telephone)
 
         error = 'A patient with that patient id already exists'
-        return redirect('/')
+        return redirect('/patient')
     return render_template('setup.html', error = error, form = pform)
 
 if __name__ == "__main__":
