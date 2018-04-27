@@ -1,0 +1,8 @@
+patient_id,name,date_of_birthate_of_birth,city,state,country,street_address,telephone
+1,Usman Raza,1985-05-01,New York,NY,USA,101 Main Street,111-111-1111
+2,Vikram Reddy,1990-01-03,Boston,MA,USA,202 South Hall,222-222-2222
+3,Sung Joo Son,1952-06-07,Walnut Creek,CA,USA,303 North Hall,333-333-3333
+4,Harman Shah Singh,1966-08-20,Seattle,WA,USA,404 West Hall,444-444-4444
+5,Shrestha Mohanty,1976-11-05,Pleasanton,CA,USA,505 East Hall,555-555-5555
+6,Jone Doe,1994-04-05,Berkeley,CA,USA,606 Bancroft Road,666-666-6666
+7,Jane Doe,1981-12-11,Berkeley,CA,USA,606 Shattuck Avenue,777-777-7777

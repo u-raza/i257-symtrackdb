@@ -45,6 +45,7 @@ def patient():
         data_row["country"] = db_row[6]
         data_row["telephone"] = db_row[7]
         data.append(data_row)
+    conn.close()
     return render_template("patient.html", data=data)
 
 

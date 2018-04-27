@@ -1,0 +1,74 @@
+symptom_id,name,description,has_duration,has_bodypart,has_severity,has_character
+1,Constipation,Constipation,1,1,1,0
+2,Diarrhea,Diarrhea,1,1,1,0
+3,Irritable bladder,Irritable bladder,1,1,1,0
+4,Indigestion,Indigestion,1,1,1,0
+5,Nausea/Vomiting,Nausea/Vomiting,1,1,1,0
+6,Abdominal pain,Abdominal pain,1,1,1,0
+7,Chills,Chills,1,0,1,0
+8,Fatigue,Fatigue,1,0,1,0
+9,Fever,Fever,1,0,0,0
+10,"Motion sickness, vertigo","Motion sickness, vertigo",1,0,0,0
+11,Poor balance,Poor balance,1,0,1,0
+12,Sweats,Sweats,1,0,0,0
+13,Swollen glands,Swollen glands,1,1,1,0
+14,Tremors,Tremors,1,1,1,0
+15,Insomnia,Inability to sleep normally,1,0,1,0
+16,Weight increase,Weight increase,1,0,0,0
+17,Buzzing/ringing ears,Buzzing/ringing ears,1,1,0,0
+18,Double/blurry vision,Double/blurry vision,1,1,0,0
+19,Facial paralysis,Facial paralysis,1,1,1,0
+20,Sore throat,Sore throat,1,1,1,0
+21,Light sensitivity,Light sensitivity,1,1,1,0
+22,Twitching facial muscles,Twitching facial muscles,1,1,0,0
+23,Stiff neck,Stiff neck,1,1,1,0
+24,Neck cracks,Neck cracks,1,1,0,0
+25,Headache,Headache,1,1,1,0
+26,Dizziness,Dizziness,1,0,0,0
+27,Heart palpitations,Heart palpitations,1,1,0,0
+28,"Confusion, difficulty thinking","Confusion, difficulty thinking",1,0,1,0
+29,Brain fog,Brain fog,1,0,1,0
+30,Difficulty concentrating,Difficulty concentrating,1,0,1,0
+31,Forgetfulness,Forgetfulness,0,0,1,0
+32,"Mood swings, irritability","Mood swings, irritability",1,0,1,0
+33,Disorientation,Disorientation,1,0,0,0
+34,Joint pain,Joint pain,1,1,1,0
+35,Joint stiffness or swelling,Joint stiffness or swelling,1,1,1,0
+36,Upper limb pain,Upper limb pain,1,1,1,0
+37,Lower limb pain,Lower limb pain,1,1,1,0
+38,Muscle cramps,Muscle cramps,1,1,1,0
+39,Difficulty walking,Difficulty walking,1,0,1,0
+40,Restless legs,Restless legs,1,1,0,0
+41,Breast milk production (unexplained),Breast milk production (unexplained),1,1,0,0
+42,Breast pain,Breast pain,1,1,1,0
+43,Shortness of breath,Shortness of breath,1,1,1,0
+44,Chest pain,Chest pain,1,1,1,0
+45,Cough,Cough,1,1,1,0
+46,Rash,Rash,1,1,1,0
+47,Numbness or tingling,Numbness or tingling,1,1,0,0
+48,Burning Sensation,Burning Sensation,1,1,0,0
+49,Bulls eye rash,Bull seye rash,1,1,0,0
+50,Stabbing sensations,Stabbing sensations,1,1,0,0
+51,Menstrual irregularity,Menstrual irregularity,0,1,1,0
+52,Sexual dysfunction or loss of libido,Sexual dysfunction or loss of libido,1,1,1,0
+53,Testicular pain,Testicular pain,1,1,1,0
+54,Pelvic pain,Pelvic pain,1,1,1,0
+55,Dental pain,Dental pain,1,1,1,0
+56,Ear pain,Ear pain,1,1,1,0
+57,Exaggerated alcohol hangover,Exaggerated symptoms or worse hangover from alcohol,0,0,0,0
+58,Excessive sleep at night,Excessive sleep at night,1,0,1,0
+59,Head congestion,Heavy feeling in head,1,1,1,0
+60,Daytime sleepiness,Daytime sleepiness,1,0,1,0
+61,Muscle weakness,Obvious weakness of muscles,1,1,1,0
+62,Psychosis,Psychosis,1,0,1,0
+63,Seizures,Seizures,1,0,1,0
+64,Weight loss,Weight loss,1,0,0,0
+65,Sore sole,Soreness of soles,1,1,1,0
+66,Sound sensitivity,Hypersensitivity to sound,1,1,1,0
+67,Speech errors,Speech errors,1,1,1,0
+68,Symptom flareups every 4 weeks,Symptom flareups every 4 weeks,0,0,0,0
+69,Back pain,Back pain,1,1,1,0
+70,Hair loss,Hair loss,1,1,1,0
+71,Word search name block,Word search name block,1,0,1,0
+72,Anxiety or panic attack,Anxiety or panic attack,0,0,1,0
+100,Other,Uncategorized,0,0,1,0
