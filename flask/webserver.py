@@ -1,11 +1,51 @@
 import sqlite3
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, url_for, request, redirect
+# for keeping track of user sessions
+from flask import session, escape, flash
+# to override url_for
+import os
+# interaction with database
+import models
+
 app = Flask(__name__)
 
 @app.route('/')
-def hello_flask():
-    return 'Hello Flask!'
+def index():
+    # create tables in database
+
+    # create patient table
+    models.create_patient_table()
+    return render_template('index.html')
+
+@app.route('/team')
+def team():
+    return 'Our team'
+
+@app.route('/clients')
+def clients():
+    return 'Clients'
+
+@app.route('/contact-us')
+def contact():
+    return 'Contact Us'
+
+# Workaround for updating static files even when
+# the browser caches old files.
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                     endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
+##### end browser cache fix
+
 
 @app.route('/patient', methods=['GET'])
 def view_table_patient():
@@ -25,6 +65,7 @@ def view_table_patient():
         data_row["telephone"] = db_row[7]
     data.append(data_row)
     return render_template("patient.html", data=data)
+
 
 if __name__ == "__main__":
     app.run()
