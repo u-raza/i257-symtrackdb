@@ -18,17 +18,29 @@ def index():
     models.create_patient_table()
     return render_template('index.html')
 
-@app.route('/team')
-def team():
-    return 'Our team'
-
-@app.route('/clients')
-def clients():
-    return 'Clients'
-
 @app.route('/contact-us')
 def contact():
-    return 'Contact Us'
+    return render_template('contactus.html')
+
+@app.route('/patient')
+def patient():
+    conn = sqlite3.connect('i257symtrack.db')
+    c = conn.cursor()
+    data = []
+    query = """SELECT patient_id, name, date_of_birth, street_address, city, state, country, telephone FROM patient"""
+    for db_row in c.execute(query):
+        data_row = {}
+        data_row["patient_id"] = db_row[0]
+        data_row["name"] = db_row[1]
+        data_row["date_of_birth"] = db_row[2]
+        data_row["street_address"] = db_row[3]
+        data_row["city"] = db_row[4]
+        data_row["state"] = db_row[5]
+        data_row["country"] = db_row[6]
+        data_row["telephone"] = db_row[7]
+    data.append(data_row)
+    return render_template("patient.html", data=data)
+
 
 # Workaround for updating static files even when
 # the browser caches old files.

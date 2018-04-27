@@ -5,10 +5,9 @@
             <nav class='blue lighten-2'>
             <div class='nav-wrapper'>
                 <div class='col s12'>
-                <a href='/' class='left brand-logo grey-text text-lighten-4'> Clymb Health </a>
+                <a href='/' class='left brand-logo grey-text text-lighten-4'> SymTrackDB </a>
                 <ul id='nav-mobile' class='right'>
-                    <li> <a class='grey-text text-lighten-4' href="{{url_for('team')}}"> Team </a> </li>
-                    <li> <a class='grey-text text-lighten-4' href="{{url_for('clients')}}"> Clients </a> </li>
+                    <li> <a class='grey-text text-lighten-4' href="{{url_for('patient')}}"> Patients </a> </li>
                     <li> <a class='grey-text text-lighten-4' href="{{url_for('contact')}}"> Contact Us </a> </li>
                 </ul>
                 </div>
@@ -18,6 +17,12 @@
 
     </nav>
     {% block header %}{% endblock %}
+
+    <title>INFO 257 Final Project: SymTrackDB</title>
+        <meta charset="utf-8">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <!-- Materialize CSS/JS libraries -->
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons">
