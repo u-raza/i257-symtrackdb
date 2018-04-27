@@ -1,0 +1,32 @@
+I have created a python code import CSV into SQLite DB and working on it. Until Now, I found the following issues.
+
+1) DIM_PTNT has sex, height and weight fields. 
+	- currently : just removed them 
+
+2) The "localization" table is different from DIM_BDY_PRT
+	- currently : Used unique values of BDY_PRT_GRP as names + added and modified some parts which are actually used by observation data (for example, back -> lower / upper back, added male/female genitals)
+	- currently just using the same id values with the DIM_BDY_PRT 
+
+3) No data for the "disease" table (DIM_DIS is empty)
+	- currently : Nothing
+	
+4) No data for the "diseasepatients" table (No matching data from Arnav)
+	- currently : Nothing	
+	
+4) No data for the "diseasesymptoms" table (No matching data from Arnav)
+	- currently : Nothing		
+
+5) No matching values for "has_character" of "symptom" table
+	- currently : all false
+	
+6) Observation table (Using vikram's csv as a source)
+	- currently I renamed "value" as "severity"
+	- I removed "sex", "age", "tick", "em", "order", "number of visits", "symptom"
+	- No "symptom_start_time"
+	- No "duration"
+	- No "character"
+	- No "timing"
+	- I got "BDY_PRT_ID" from the "Insert Template - update 2014-04-24.xlsx" and renamed it as "locale id", 
+	- I renamed "date" as "log_time" but it has only date without time(hh:mm:ss)
+	- I changed patient_id according to our patient table
+		2365 -> 5 / 1342 -> 4 / 811 -> 3 / 533 -> 2 / 55 -> 1
