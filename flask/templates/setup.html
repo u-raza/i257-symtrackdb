@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Display trips -->
+<div class="container">
+    <div class="row">
+        <h4>Create a new patient here</h4><br>
+
+                <!-- Patient form -->
+            <form action="" method="post" name="setup">
+                {{ form.hidden_tag() }}
+                <div class="section">
+                    <p>
+                        Name:<br>
+                        {{form.name(size=120)}}<br>
+                    </p>
+                    <p>
+                        Date of Birth:<br>
+                        {{form.dob(size=120)}}<br>
+                    </p>
+                    <p>
+                        City:<br>
+                        {{form.city(size=120)}}<br>
+                    </p>
+                    <p>
+                        State:<br>
+                        {{form.state(size=120)}}<br>
+                    </p>
+                    <p>
+                        Country:<br>
+                        {{form.country(size=120)}}<br>
+                    </p>
+                    <p>
+                        Telephone:<br>
+                        {{form.telephone(size=120)}}<br>
+                    </p>
+                </div>
+                <p>
+                    <button class="btn waves-effect waves-light green accent-2" type="submit" value="addpatient">
+                    
+                        Add patient
+                    
+                    </button>
+                </p>
+            </form>
+    </div>
+</div>
+{% endblock %}
