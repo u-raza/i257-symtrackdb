@@ -131,9 +131,27 @@ def submit_queries():
 
     return render_template('queries.html', error = error, form = qform, results=data)
 
+@app.route('/edit-patient/<patient_id>', methods=['GET','POST'])
+def edit_patient(patient_id):
+    pform = PatientForm()
+    #return redirect('/login')
+    error = None
+    patient_details = models.get_patient(patient_id)
+    if pform.validate_on_submit():
 
+        #user input
+        name = pform.name.data
+        dob = pform.dob.data
+        street = pform.street_address.data
+        city = pform.city.data
+        state = pform.state.data
+        country = pform.country.data
+        telephone = pform.telephone.data
 
+        models.update_patient(patient_id, name, dob, street, city, state, country, telephone)
 
+        return redirect('/patient')
+    return render_template('edit_patient.html', id=patient_id, form = pform, existing=patient_details)
 
 if __name__ == "__main__":
     app.run()
