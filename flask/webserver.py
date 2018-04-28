@@ -8,7 +8,7 @@ import os
 # interaction with database
 import models
 # forms and validation
-from forms import PatientForm
+from forms import PatientForm, QueryForm
 
 
 app = Flask(__name__)
@@ -28,6 +28,7 @@ def index():
 def contact():
     return render_template('contactus.html')
 
+# show patient list
 @app.route('/patient')
 def patient():
     conn = sqlite3.connect('i257symtrack.db')
@@ -64,25 +65,6 @@ def dated_url_for(endpoint, **values):
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
 ##### end browser cache fix
-
-@app.route('/patient', methods=['GET'])
-def view_table_patient():
-    conn = sqlite3.connect('i257symtrack.db')
-    c = conn.cursor()
-    data = []
-    query = """SELECT patient_id, name, date_of_birth, street_address, city, state, country, telephone FROM patient"""
-    for db_row in c.execute(query):
-        data_row = {}
-        data_row["patient_id"] = db_row[0]
-        data_row["name"] = db_row[1]
-        data_row["date_of_birth"] = db_row[2]
-        data_row["street_address"] = db_row[3]
-        data_row["city"] = db_row[4]
-        data_row["state"] = db_row[5]
-        data_row["country"] = db_row[6]
-        data_row["telephone"] = db_row[7]
-    data.append(data_row)
-    return render_template("patient.html", data=data)
 
 
 #### app routes for dummy data
@@ -135,7 +117,21 @@ def fill_symptoms():
 
 @app.route('/submit_queries', methods=['GET', 'POST'])
 def submit_queries():
-    return "Under construction"
+    qform = QueryForm()
+    error = None
+    if qform.validate_on_submit():
+        #user input
+    #     id = qform.id.data
+    #     sdate = qform.start_date.data
+    #     edate = qform.end_date.data
+    #     q = qform.query_type.data
+
+    #     query = models.submit_query(id, sdate, edate, q)
+
+    #     error = 'A patient with that patient id already exists'
+    #     return redirect('/submit_queries')
+        return render_template('queries.html')
+    return render_template('queries.html', error = error, form = qform)
 
 if __name__ == "__main__":
     app.run()

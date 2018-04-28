@@ -8,12 +8,12 @@
         <h4>Check patient's progress here</h4><br>
 
                 <!-- Query form -->
-            <form action="" method="post" name="setup">
+            <form action="" method="post" name="query_form">
                 {{ form.hidden_tag() }}
                 <div class="section">
                     <p>
                         Patient ID:<br>
-                        {{form.pid(size=120)}}<br>
+                        {{form.pid(size=20)}}<br>
                     </p>
                     <p>
                         Start Date:<br>
