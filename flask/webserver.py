@@ -128,7 +128,6 @@ def submit_queries():
 
     #     query = models.submit_query(id, sdate, edate, q)
 
-    #     error = 'A patient with that patient id already exists'
     #     return redirect('/submit_queries')
         return render_template('queries.html')
     return render_template('queries.html', error = error, form = qform)

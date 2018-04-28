@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Display trips -->
+<!-- Query page -->
 <div class="container">
     <div class="row">
         <h4>Check patient's progress here</h4><br>
@@ -10,22 +10,26 @@
                 <!-- Query form -->
             <form action="" method="post" name="query_form">
                 {{ form.hidden_tag() }}
-                <div class="section">
-                    <p>
+                <div class="row">
+                    <div class="input-field col s4">
                         Patient ID:<br>
                         {{form.pid(size=20)}}<br>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="input-field col s4">
                         Start Date:<br>
-                        {{form.start_date(size=120)}}<br>
-                    </p>
-                    <p>
+                        {{form.start_date(size=100)}}<br>
+                    </div>
+                    <div class="input-field col s4">
                         End Date:<br>
-                        {{form.end_date(size=120)}}<br>
-                    </p>
+                        {{form.end_date(size=100)}}<br>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-grey text-lighten-3">Please select the type of report you want to see:</span><br>
+                    {{form.query_type}}
                 </div>
                 <p>
-                    <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="submit_query">
+                    <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="q1">
                         Submit Query                    
                     </button>
                 </p>

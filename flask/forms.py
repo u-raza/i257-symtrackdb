@@ -1,7 +1,7 @@
 
 # from flask.ext.wtf import Form // this is deprecated
 from flask_wtf import Form
-from wtforms import StringField, IntegerField, PasswordField, SelectField, DateField
+from wtforms import StringField, IntegerField, PasswordField, SelectField, DateField, RadioField
 # from flask_wtf.html5 import EmailField // this is deprecated
 from wtforms.fields.html5 import EmailField
 from wtforms import validators
@@ -20,7 +20,12 @@ class PatientForm(Form):
 # symptom logging form
 class QueryForm(Form):
     pid = StringField('patient_id', [validators.required()])
-    start_date = DateField('start_date', [validators.required()])
-    end_date = DateField('end_date', [validators.required()])
-    query_type = StringField('query_type', [validators.required()])
+    start_date = DateField('start_date', [validators.required()], format='%m/%d/%Y')
+    end_date = DateField('end_date', [validators.required()], format='%m/%d/%Y')
+    query_type = RadioField('Report type', [validators.required()],
+                                                 choices=[  ('q1', 'Average symptom score'),
+                                                            ('q2', 'Contribution of symptoms in total score'),
+                                                            ('q3', 'Average severity of each symptom'),
+                                                            ('q4', 'Day-wise symptom severity'),
+                                                            ('q4', 'Total symptom score (date-wise)')])
 
