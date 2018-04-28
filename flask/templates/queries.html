@@ -5,7 +5,7 @@
 <!-- Query page -->
 <div class="container">
     <div class="row">
-        <h4>Check patient's progress here</h4><br>
+        <h5>Check patient progress here</h4><br>
 
                 <!-- Query form -->
             <form action="" method="post" name="query_form">
@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="input-field col s4">
                         Patient ID:<br>
-                        {{form.pid(size=20)}}<br>
+                        {{form.p_id(size=20)}}<br>
                     </div>
                     <div class="input-field col s4">
                         Start Date:<br>
@@ -34,6 +34,18 @@
                     </button>
                 </p>
             </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block results %}
+<div class="container">
+    <br><hr><br>
+    <div class="row">
+        <h5>Query Results (Report)</h4>
+    </div>
+    <div class="row">
+        {{results}}
     </div>
 </div>
 {% endblock %}

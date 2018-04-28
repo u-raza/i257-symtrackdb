@@ -72,10 +72,8 @@ def dated_url_for(endpoint, **values):
 @app.route('/setup', methods=['GET', 'POST'])
 def setup():
     pform = PatientForm()
-    #return redirect('/login')
     error = None
     if pform.validate_on_submit():
-
         #user input
         name = pform.name.data
         dob = pform.dob.data
@@ -105,7 +103,7 @@ def fill_symptoms():
                 sym_id, name = lst
             else:
                 sym_id, name, _ = lst
-            #print(line)
+
             # Add symptom, giving it a severity
             try:
                 models.add_symptom(sym_id, name, name, False, False, True, False)
@@ -119,18 +117,23 @@ def fill_symptoms():
 def submit_queries():
     qform = QueryForm()
     error = None
+    data = ""
+
     if qform.validate_on_submit():
         #user input
-    #     id = qform.id.data
-    #     sdate = qform.start_date.data
-    #     edate = qform.end_date.data
-    #     q = qform.query_type.data
-
+        pid = qform.p_id.data
+        sdate = qform.start_date.data
+        edate = qform.end_date.data
+        q = qform.query_type.data
     #     query = models.submit_query(id, sdate, edate, q)
+        data = str(pid) + " || " + str(sdate) + " || " + str(edate) + " || " + q
+        # return data # just testing if it's getting the parameters
 
-    #     return redirect('/submit_queries')
-        return render_template('queries.html')
-    return render_template('queries.html', error = error, form = qform)
+    return render_template('queries.html', error = error, form = qform, results=data)
+
+
+
+
 
 if __name__ == "__main__":
     app.run()
