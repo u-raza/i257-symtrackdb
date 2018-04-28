@@ -34,6 +34,7 @@ def add_patient(name, date_of_birth, street_address, city, state, country, telep
         conn.commit()
         print('done')
 
+# add symptom
 def add_symptom(sym_id, name, description, has_duration, has_bodypart, has_severity, has_character):
 	    with sql.connect("i257symtrack.db") as conn:
 	        conn.row_factory = sql.Row

@@ -1,8 +1,8 @@
 
-# from flask.ext.wtf import Form
+# from flask.ext.wtf import Form // this is deprecated
 from flask_wtf import Form
 from wtforms import StringField, IntegerField, PasswordField, SelectField
-# from flask_wtf.html5 import EmailField
+# from flask_wtf.html5 import EmailField // this is deprecated
 from wtforms.fields.html5 import EmailField
 from wtforms import validators
 

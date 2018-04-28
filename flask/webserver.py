@@ -132,6 +132,11 @@ def fill_symptoms():
 
     return render_template('index.html')
 
+
+@app.route('/submit_queries', methods=['GET', 'POST'])
+def submit_queries():
+    return "Under construction"
+
 if __name__ == "__main__":
     app.run()
 
