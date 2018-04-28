@@ -30,7 +30,6 @@ def add_patient(name, date_of_birth, street_address, city, state, country, telep
             "INSERT INTO patient (name, date_of_birth, street_address, city, state, country, telephone) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
         cur.execute(sql_stmt, (name, date_of_birth, street_address, city, state, country, telephone))
-        #trip_id = cur.lastrowid
         conn.commit()
         print('done')
 
@@ -79,7 +78,6 @@ def add_symptom(sym_id, name, description, has_duration, has_bodypart, has_sever
 	            "INSERT INTO symptom (symptom_id, name, description, has_duration, has_bodypart, has_severity, has_character) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
 	        cur.execute(sql_stmt, (sym_id, name, description, has_duration, has_bodypart, has_severity, has_character))
-	        #trip_id = cur.lastrowid
 	        #conn.commit()
 
 	        
