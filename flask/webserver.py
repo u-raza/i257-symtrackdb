@@ -124,11 +124,10 @@ def submit_queries():
         patient_id = qform.p_id.data
         start_date = qform.start_date.data
         end_date = qform.end_date.data
-        query_name = qform.query_name.data
-        data = runquery(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_name)
+        query_type = qform.query_type.data
+        data = runquery(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_type)
     else:
-        data = "Invalid Input"
-        print ("why?")
+        data = "Not Ready"
         return render_template('queries.html', error=error, form=qform, results=data)
 
     return render_template('queries.html', error=error, form=qform, results=data)

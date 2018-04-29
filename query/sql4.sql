@@ -3,17 +3,18 @@ left outer join observation o
 on o.patient_id = o.patient_id
 left outer join symptom s
 on s.symptom_id = o.symptom_id
-where p.patient_id = ?
-and o.symptom_start_time >= ?
-and o.symptom_start_time <= ?
+where p.patient_id = 7
+and o.symptom_start_time >= '2016-09-13'
+and o.symptom_start_time <= '2016-09-14'
 group by s.Name, o.symptom_start_time, o.severity
 union all
-select s.Name, o.symptom_start_time, o.severity, 'previous_period' as period from patient p
+
+select s.Name, o.symptom_start_time, o.severity, 'previous_period' as period from patient p 
 left outer join observation o
 on o.patient_id = o.patient_id
 left outer join symptom s
 on s.symptom_id = o.symptom_id
-where p.patient_id = ?
-and o.symptom_start_time >= date(date(?), '-' || (julianday(date(?)) - julianday(date(?)) + 1) || ' days')
-and o.symptom_start_time <= date(date(?), '-1 days')
-group by s.Name, o.symptom_start_time, o.severity;
+where p.patient_id = 7
+and o.symptom_start_time >= date(date('2016-09-13'), '-' || (julianday(date('2016-09-14')) - julianday(date('2016-09-13')) + 1) || ' days')
+and o.symptom_start_time <= date(date('2016-09-13'), '-1 days')
+group by s.Name, o.symptom_start_time, o.severity
