@@ -9,7 +9,7 @@ import os
 import models
 # forms and validation
 from forms import PatientForm, QueryForm
-from queries import runquery
+from queries import run_query
 
 
 app = Flask(__name__)
@@ -125,7 +125,7 @@ def submit_queries():
         start_date = qform.start_date.data
         end_date = qform.end_date.data
         query_type = qform.query_type.data
-        data = runquery(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_type)
+        data = run_query(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_type)
     else:
         data = "Not Ready"
         return render_template('queries.html', error=error, form=qform, results=data)
