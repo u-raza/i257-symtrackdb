@@ -9,6 +9,7 @@ import os
 import models
 # forms and validation
 from forms import PatientForm, QueryForm
+from queries import runquery
 
 
 app = Flask(__name__)
@@ -118,18 +119,19 @@ def submit_queries():
     qform = QueryForm()
     error = None
     data = ""
-
     if qform.validate_on_submit():
         #user input
-        pid = qform.p_id.data
-        sdate = qform.start_date.data
-        edate = qform.end_date.data
-        q = qform.query_type.data
-    #     query = models.submit_query(id, sdate, edate, q)
-        data = str(pid) + " || " + str(sdate) + " || " + str(edate) + " || " + q
-        # return data # just testing if it's getting the parameters
+        patient_id = qform.p_id.data
+        start_date = qform.start_date.data
+        end_date = qform.end_date.data
+        query_name = qform.query_name.data
+        data = runquery(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_name)
+    else:
+        data = "Invalid Input"
+        print ("why?")
+        return render_template('queries.html', error=error, form=qform, results=data)
 
-    return render_template('queries.html', error = error, form = qform, results=data)
+    return render_template('queries.html', error=error, form=qform, results=data)
 
 @app.route('/edit-patient/<patient_id>', methods=['GET','POST'])
 def edit_patient(patient_id):

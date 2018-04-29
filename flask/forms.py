@@ -20,12 +20,12 @@ class PatientForm(FlaskForm):
 # symptom logging form
 class QueryForm(FlaskForm):
     p_id = StringField('patient_id', [validators.required()])
-    start_date = DateField('start_date', [validators.required()], format='%m/%d/%Y')
-    end_date = DateField('end_date', [validators.required()], format='%m/%d/%Y')
-    query_type = RadioField('Report type', [validators.required()],
-                                                 choices=[  ('q1', 'Average symptom score'),
-                                                            ('q2', 'Contribution of symptoms in total score'),
-                                                            ('q3', 'Average severity of each symptom'),
-                                                            ('q4', 'Day-wise symptom severity'),
-                                                            ('q5', 'Total symptom score (date-wise)')])
+    start_date = DateField('start_date', [validators.required()], format='%Y-%m-%d')
+    end_date = DateField('end_date', [validators.required()], format='%Y-%m-%d')
+    query_name = RadioField('Report type', [validators.required()],
+                                                 choices=[  ('sql1', 'Average symptom score'),
+                                                            ('sql2', 'Contribution of symptoms in total score'),
+                                                            ('sql3', 'Average severity of each symptom'),
+                                                            ('sql4', 'Day-wise symptom severity'),
+                                                            ('sql5', 'Total symptom score (date-wise)')])
 
