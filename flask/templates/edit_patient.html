@@ -5,45 +5,49 @@
 
 <div class="container">
     <div class="row">
-        <h4>Create a new patient here</h4><br>
+        <h3>Edit Patient</h3><br>
 
                 <!-- Patient form -->
             <form action="" method="post" name="setup">
                 {{ form.hidden_tag() }}
                 <div class="section">
+                	<p>
+                        Patient ID:<br>
+                        {{id}}<br>
+                    </p>
                     <p>
                         Name:<br>
-                        {{form.name(size=120)}}<br>
+                        {{form.name(size=120, value=existing[0].name)}}<br>
                     </p>
                     <p>
                         Date of Birth:<br>
-                        {{form.dob(size=120)}}<br>
+                        {{form.dob(size=120, value=existing[0].date_of_birth)}}<br>
                     </p>
                     <p>
                         Street Address:<br>
-                        {{form.street_address(size=120)}}<br>
+                        {{form.street_address(size=120, value=existing[0].street_address)}}<br>
                     </p>
                     <p>
                         City:<br>
-                        {{form.city(size=120)}}<br>
+                        {{form.city(size=120, value=existing[0].city)}}<br>
                     </p>
                     <p>
                         State:<br>
-                        {{form.state(size=120)}}<br>
+                        {{form.state(size=120, value=existing[0].state)}}<br>
                     </p>
                     <p>
                         Country:<br>
-                        {{form.country(size=120)}}<br>
+                        {{form.country(size=120, value=existing[0].country)}}<br>
                     </p>
                     <p>
                         Telephone:<br>
-                        {{form.telephone(size=120)}}<br>
+                        {{form.telephone(size=120, value=existing[0].telephone)}}<br>
                     </p>
                 </div>
                 <p>
-                    <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="addpatient">
+                    <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="updatepatient">
                     
-                        Add patient
+                        Update patient
                     
                     </button>
                 </p>

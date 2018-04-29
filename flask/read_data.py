@@ -1,3 +1,4 @@
+# load dummy data from csv
 with open('data/symptoms_dummydata_only.csv') as fin:
 	lines = fin.readlines()
 	for line in lines:

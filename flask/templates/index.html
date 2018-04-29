@@ -2,95 +2,50 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Title page -->
-    <div class="container white-text">
+<div class="container white-text">
     <div class="row">
-      <div class="col s12 m12 l12 ">
+        <div class="col s12 m12 l12 ">
 
-        <div class='center-align'> <h3>A Database for Keeping Track of Symptoms</h3> </div>
-        <h4></h4>
-
+            <div class='center-align'>
+                <h3>A Database for Symptom Tracking</h3>
             </div>
+        </div>
     </div>
-  
-  <br>
-  </div>
-
-<div class='section black'>
-
-	<div class='row'></div>
-
+    <br>
 </div>
  
 <!--Symptoms-->
 <div id="symptoms" class="section white scroll-adjust">
     <div class="container">
         <div class="row">
-            <div  class="col s12">
+            <!-- <div  class="col s12">
                 <h2 class="center header"> Symptoms </h2>
-            </div>
+            </div> -->
 
             <div class="col s12 m4 l4">
             	<div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">flash_on</i>
-                    <a href="{{url_for('fill_symptoms')}}" method="post"> <h5>Fill In Data</h5></a>
-                    <p class="light center">We use dummy data extrapolated from domain experts.</p>
+                    <i class="large blue-text text-lighten-2 material-icons">border_color</i>
+                    <a href="{{url_for('fill_symptoms')}}"> <h5>Fill Data</h5></a>
+                    <p class="light center">Fill dummy data into database based on real patient data.</p>
             	</div>
             </div>
             <div class="col s12 m4 l4">
                 <div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">format_quote</i>
-                    <h5>Average Symptom Severity</h5>
-                    <p class="light center">We calculate average symptom severity across various time periods</p>
+                    <i class="large blue-text text-lighten-2 material-icons">format_list_numbered</i>
+                    <h5 class="promo-caption">Log Symptoms</h5>
+                    <p class="light center">Click here to enter daily symptom severity data for a specific patient.</p>
                 </div>
             </div>
             <div class="col s12 m4 l4">
                 <div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">cloud</i>
-                    <h5 class="promo-caption">Cloud Computing</h5>
-                    <p class="light center">Housed in the Cloud</p>
+                    <i class="large blue-text text-lighten-2 material-icons">assessment</i>
+                    <a href="{{url_for('submit_queries')}}"> <h5>Check progress</h5> </a>
+                    <p class="light center">We calculate several metrics across time periods in the database to provide several views of patient's symptom progression.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class='section black'>
-
-
-</div>
-
-<!-- Medications -->
-<div id="medications" class="section white scroll-adjust">
-    <div class="container">
-        <div class="row">
-            <div  class="col s12">
-                <h2 class="center header"> Medications </h2>
-            </div>
-
-            <div class="col s12 m4 l4">
-            	<div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">flash_on</i>
-                    <h5>Fill In Data</h5>
-                    <p class="light center">We use dummy data extrapolated from domain experts</p>
-            	</div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">format_quote</i>
-                    <h5>Patients and Medications</h5>
-                    <p class="light center">Here we show the medications used by each patient</p>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                    <i class="large blue-text text-lighten-2 material-icons">cloud</i>
-                    <h5 class="promo-caption">Cloud Computing</h5>
-                    <p class="light center">Housed in the Cloud</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-	<div class='section white'></div>
+<div class='section white'></div>
 {% endblock %}
