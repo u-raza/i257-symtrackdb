@@ -22,8 +22,20 @@ def run_query(patient_id, date_from, date_to, query_type):
         return "Error: invalid query"
 
     query_result = c.execute(sql, query_param).fetchall()
-    query_result.insert(0, tuple(i[0] for i in c.description))  # Insert column names
-    return query_result
+    
+    # rounding off numerical results
+    query_result_rounded = []
+    for r in query_result:
+        lst = list(r)
+        for s in range(len(lst)):
+            if type(lst[s]) != str:
+                lst[s] = round(lst[s], 2)
+
+        query_result_rounded.append(tuple(lst))
+        
+    query_result_rounded.insert(0, tuple(i[0] for i in c.description))  # Insert column names
+
+    return query_result_rounded
 
 
 

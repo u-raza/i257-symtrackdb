@@ -136,7 +136,8 @@ def submit_queries():
         data = "Not Ready"
         return render_template('queries.html', error=error, form=qform, results=data)
 
-    return render_template('queries.html', error=error, form=qform, report_title = report_titles[query_type], results=data)
+    return render_template('queries.html', error=error, form=qform, report_title = report_titles[query_type],
+                            start_period=start_date, end_period=end_date, results=data)
 
 @app.route('/edit-patient/<patient_id>', methods=['GET','POST'])
 def edit_patient(patient_id):
