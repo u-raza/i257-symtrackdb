@@ -42,10 +42,25 @@
 <div class="container">
     <br><hr><br>
     <div class="row">
-        <h4>Query Results (Report)</h4>
+        <h5>Query Results - {{ report_title }}</h5>
     </div>
-    <div class="row">
-        {{results}}
-    </div>
+    <table>
+        <thead>   
+        <tr>
+            {% for row in results[0] %}
+            <th>{{row}}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in results[1:] %}
+          <tr>
+              {% for i in row %}
+            <td>{{i}}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 </div>
 {% endblock %}

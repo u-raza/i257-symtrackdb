@@ -11,6 +11,12 @@ import models
 from forms import PatientForm, QueryForm
 from queries import run_query
 
+report_titles = {'q1': 'Average symptom score',
+                'q2': 'Contribution of symptoms in total score',
+                'q3': 'Average severity of each symptom',
+                'q4': 'Day-wise symptom severity',
+                'q5': 'Total symptom score (date-wise)'}
+
 
 app = Flask(__name__)
 
@@ -130,7 +136,7 @@ def submit_queries():
         data = "Not Ready"
         return render_template('queries.html', error=error, form=qform, results=data)
 
-    return render_template('queries.html', error=error, form=qform, results=data)
+    return render_template('queries.html', error=error, form=qform, report_title = report_titles[query_type], results=data)
 
 @app.route('/edit-patient/<patient_id>', methods=['GET','POST'])
 def edit_patient(patient_id):
