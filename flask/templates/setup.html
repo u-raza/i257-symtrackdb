@@ -11,40 +11,44 @@
             <form action="" method="post" name="setup">
                 {{ form.hidden_tag() }}
                 <div class="section">
-                    <p>
-                        Name:<br>
-                        {{form.name(size=120)}}<br>
-                    </p>
-                    <p>
-                        Date of Birth:<br>
-                        {{form.dob(size=120)}}<br>
-                    </p>
-                    <p>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            Name:
+                            <br> {{form.name(size=120)}}
+                        </div>
+                        <div class="input-field col s6">
+                            Date of Birth:
+                            <br> {{form.dob(size=120)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
                         Street Address:<br>
-                        {{form.street_address(size=120)}}<br>
-                    </p>
-                    <p>
+                        {{form.street_address(size=120)}}
+                        </div>
+                        <div class="input-field col s6">
                         City:<br>
-                        {{form.city(size=120)}}<br>
-                    </p>
-                    <p>
+                        {{form.city(size=120)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
                         State:<br>
-                        {{form.state(size=120)}}<br>
-                    </p>
-                    <p>
+                        {{form.state(size=120)}}
+                        </div>
+                        <div class="input-field col s4">
                         Country:<br>
-                        {{form.country(size=120)}}<br>
-                    </p>
-                    <p>
-                        Telephone:<br>
-                        {{form.telephone(size=120)}}<br>
-                    </p>
+                        {{form.country(size=120)}}
+                        </div>
+                        <div class="input-field col s4">
+                            Telephone:<br>
+                            {{form.telephone(size=120)}}
+                        </div>
+                    </div>
                 </div>
                 <p>
                     <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="addpatient">
-                    
                         Add patient
-                    
                     </button>
                 </p>
             </form>

@@ -11,38 +11,44 @@
             <form action="" method="post" name="setup">
                 {{ form.hidden_tag() }}
                 <div class="section">
-                	<p>
+                	<div class="row">
+                        <div class="input-field col s4">
                         Patient ID:<br>
-                        {{id}}<br>
-                    </p>
-                    <p>
+                        {{id}}
+                        </div>
+                        <div class="input-field col s4">
                         Name:<br>
-                        {{form.name(size=120, value=existing[0].name)}}<br>
-                    </p>
-                    <p>
+                        {{form.name(size=120, value=existing[0].name)}}
+                        </div>
+                        <div class="input-field col s4">
                         Date of Birth:<br>
-                        {{form.dob(size=120, value=existing[0].date_of_birth)}}<br>
-                    </p>
-                    <p>
+                        {{form.dob(size=120, value=existing[0].date_of_birth)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
                         Street Address:<br>
-                        {{form.street_address(size=120, value=existing[0].street_address)}}<br>
-                    </p>
-                    <p>
+                        {{form.street_address(size=120, value=existing[0].street_address)}}
+                        </div>
+                        <div class="input-field col s4">
                         City:<br>
-                        {{form.city(size=120, value=existing[0].city)}}<br>
-                    </p>
-                    <p>
+                        {{form.city(size=120, value=existing[0].city)}}
+                        </div>
+                        <div class="input-field col s4">
                         State:<br>
-                        {{form.state(size=120, value=existing[0].state)}}<br>
-                    </p>
-                    <p>
+                        {{form.state(size=120, value=existing[0].state)}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
                         Country:<br>
-                        {{form.country(size=120, value=existing[0].country)}}<br>
-                    </p>
-                    <p>
+                        {{form.country(size=120, value=existing[0].country)}}
+                        </div>
+                        <div class="input-field col s4">
                         Telephone:<br>
-                        {{form.telephone(size=120, value=existing[0].telephone)}}<br>
-                    </p>
+                        {{form.telephone(size=120, value=existing[0].telephone)}}
+                        </div>
+                    </div>
                 </div>
                 <p>
                     <button class="black-text btn waves-effect waves-light green accent-2" type="submit" value="updatepatient">
