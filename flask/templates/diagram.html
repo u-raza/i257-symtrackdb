@@ -12,7 +12,7 @@
                 select sum(average_severity) as total_severity from<br>
                 (select s.name, avg(o.severity) as average_severity  from patient p <br>
                 left outer join observation o<br>
-                on o.patient_id = o.patient_id<br>
+                on p.patient_id = o.patient_id<br>
                 left outer join symptom s<br>
                 on s.symptom_id = o.symptom_id<br>
                 where p.patient_id = ?<br>
