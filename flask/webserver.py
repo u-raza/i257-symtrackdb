@@ -35,6 +35,10 @@ def index():
 def contact():
     return render_template('contactus.html')
 
+@app.route('/diagram')
+def diagram():
+    return render_template('diagram.html')
+
 # show patient list
 @app.route('/patient')
 def patient():

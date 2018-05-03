@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="symptoms" class="section white scroll-adjust">
+    <div class="container">
+        <h3>ER Diagram</h3>
+        <img src="/static/images/diagram.png">
+        <br><br><hr>
+    </div>
+    <div class="container">
+            <h3>Query Example</h3>
+            <p class="flow-text"><code>
+                select sum(average_severity) as total_severity from<br>
+                (select s.name, avg(o.severity) as average_severity  from patient p <br>
+                left outer join observation o<br>
+                on o.patient_id = o.patient_id<br>
+                left outer join symptom s<br>
+                on s.symptom_id = o.symptom_id<br>
+                where p.patient_id = ?<br>
+                and o.symptom_start_time >= ?<br>
+                and o.symptom_start_time <= ?<br>
+                group by s.name);
+            </code></p>
+        </div>
+</div>
+{% endblock %}
