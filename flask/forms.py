@@ -5,6 +5,7 @@ from wtforms import StringField, IntegerField, PasswordField, SelectField, DateF
 # from flask_wtf.html5 import EmailField // this is deprecated
 from wtforms.fields.html5 import EmailField
 from wtforms import validators
+import sqlite3
 
 # patient sign up form
 class PatientForm(FlaskForm):
@@ -19,7 +20,20 @@ class PatientForm(FlaskForm):
 
 # symptom logging form
 class QueryForm(FlaskForm):
-    p_id = StringField('patient_id', [validators.required()])
+    # p_id = StringField('patient_id', [validators.required()])
+    
+    # get patient ID and name list
+    conn = sqlite3.connect('i257symtrack.db')
+    c = conn.cursor()
+    p_list = []
+    query = """SELECT patient_id, name FROM patient"""
+    for db_row in c.execute(query):
+        row_pid = db_row[0]
+        row_pname = str(row_pid) + ' - ' + db_row[1]
+        p_list.append((row_pid,row_pname))
+    conn.close()
+    
+    p_id = SelectField('patient_id', choices=p_list, coerce=int, option_widget=None)
     start_date = DateField('start_date', [validators.required()], format='%Y-%m-%d')
     end_date = DateField('end_date', [validators.required()], format='%Y-%m-%d')
     query_type = RadioField('Report type', [validators.required()],

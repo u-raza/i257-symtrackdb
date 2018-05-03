@@ -122,6 +122,7 @@ def fill_symptoms():
 
 @app.route('/submit_queries', methods=['GET', 'POST'])
 def submit_queries():
+
     qform = QueryForm()
     error = None
     data = ""
@@ -133,10 +134,10 @@ def submit_queries():
         query_type = qform.query_type.data
         data = run_query(patient_id, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), query_type)
     else:
-        data = "Not Ready"
+        data = ""
         return render_template('queries.html', error=error, form=qform, results=data)
 
-    return render_template('queries.html', error=error, form=qform, report_title = report_titles[query_type],
+    return render_template('queries.html', error="Error: Not ready", form=qform, report_title = report_titles[query_type],
                             start_period=start_date, end_period=end_date, results=data)
 
 @app.route('/edit-patient/<patient_id>', methods=['GET','POST'])

@@ -12,8 +12,15 @@
                 {{ form.hidden_tag() }}
                 <div class="row">
                     <div class="input-field col s4">
-                        Patient ID:<br>
-                        {{form.p_id(size=20, placeholder="1-5")}}<br>
+                        Select patient:<br>
+                        {{form.p_id(class_="browser-default")}}
+                    <!-- <label>Select from list</label><br> -->
+                    <!-- <select class="browser-default">
+                        <option value="" disabled selected>Choose a patient</option>
+                        {% for p in patients %}
+                            <option value={{p['patient_id']}}>{{ p['patient_id'] , p['name'] }}</option>
+                        {% endfor %}
+                    </select> -->
                     </div>
                     <div class="input-field col s4">
                         Start Date (yyyy-mm-dd):<br>
