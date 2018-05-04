@@ -1,10 +1,8 @@
 select sum(average_severity) as total_severity from
-(select s.name, avg(o.severity) as average_severity  from patient p 
-left outer join observation o
-on o.patient_id = o.patient_id
-left outer join symptom s
-on s.symptom_id = o.symptom_id
-where p.patient_id = ?
-and o.symptom_start_time >= ?
-and o.symptom_start_time <= ?
-group by s.name);
+(select symptom.name, avg(observation.severity) as average_severity
+from symptom, observation
+where symptom.symptom_id = observation.symptom_id
+and observation.patient_id = ?
+and observation.symptom_start_time >= ?
+and observation.symptom_start_time <= ?
+group by symptom.name);

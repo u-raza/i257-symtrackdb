@@ -28,8 +28,9 @@ def run_query(patient_id, date_from, date_to, query_type):
     for r in query_result:
         lst = list(r)
         for s in range(len(lst)):
-            if type(lst[s]) != str:
-                lst[s] = round(lst[s], 2)
+            if lst[s] is not None:
+                if type(lst[s]) != str:
+                    lst[s] = round(lst[s], 2)
 
         query_result_rounded.append(tuple(lst))
         
