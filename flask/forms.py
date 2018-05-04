@@ -37,7 +37,7 @@ class QueryForm(FlaskForm):
     start_date = DateField('start_date', [validators.required()], format='%Y-%m-%d')
     end_date = DateField('end_date', [validators.required()], format='%Y-%m-%d')
     query_type = RadioField('Report type', [validators.required()],
-                                                 choices=[  ('q1', 'Average symptom score'),
+                                                 choices=[  ('q1', 'Total average severity score'),
                                                             ('q2', 'Contribution of symptoms in total score'),
                                                             ('q3', 'Average severity of each symptom'),
                                                             ('q4', 'Day-wise symptom severity'),
