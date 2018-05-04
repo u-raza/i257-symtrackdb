@@ -10,15 +10,13 @@
             <h3>Query Example</h3>
             <p class="flow-text"><code>
                 select sum(average_severity) as total_severity from<br>
-                (select s.name, avg(o.severity) as average_severity  from patient p <br>
-                left outer join observation o<br>
-                on p.patient_id = o.patient_id<br>
-                left outer join symptom s<br>
-                on s.symptom_id = o.symptom_id<br>
-                where p.patient_id = ?<br>
-                and o.symptom_start_time >= ?<br>
-                and o.symptom_start_time <= ?<br>
-                group by s.name);
+                (select symptom.name, avg(observation.severity) as average_severity<br>
+                from symptom, observation<br>
+                where symptom.symptom_id = observation.symptom_id<br>
+                and observation.patient_id = ?<br>
+                and observation.symptom_start_time >= ?<br>
+                and observation.symptom_start_time <= ?<br>
+                group by symptom.name);
             </code></p>
         </div>
 </div>
